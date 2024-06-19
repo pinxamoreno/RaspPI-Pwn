@@ -79,7 +79,7 @@ if [[ ! $PPSTAT == "" ]] ; then
 sudo systemctl disable pppoe
 fi
 if [ ! -f /boot/firmware/PPPwn/ports.txt ]; then
-echo '2121,3232,9090,8080,12800,1337' | sudo tee /boot/firmware/PPPwn/ports.txt
+echo '2121,3232,9090,8080,12800,1337,9295,9296,9297,9303,9304,987,8572' | sudo tee /boot/firmware/PPPwn/ports.txt
 fi
 sudo sed -i 's^"exit 0"^"exit"^g' /etc/rc.local
 sudo sed -i 's^sudo bash /boot/firmware/PPPwn/devboot.sh \&^^g' /etc/rc.local
