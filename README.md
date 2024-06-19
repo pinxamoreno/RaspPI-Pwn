@@ -8,6 +8,8 @@ The <a href=https://www.raspberrypi.com/products/raspberry-pi-4-model-b/>Raspber
 
 There is also a webserver to control the pi, change settings and send payloads by accessing http://pppwn.local from the console or your pc if you have internet access enabled.<br> 
 
+It is a brach based on May 30, 2024 version of https://github.com/stooged/PI-Pwn. All updates after it don´t work as I need on my Raspberry Pi 3B+<br> 
+
 <br>
 
 ## Tested PI Models
