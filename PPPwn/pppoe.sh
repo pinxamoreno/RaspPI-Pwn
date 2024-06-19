@@ -23,11 +23,17 @@ if [ -f /boot/firmware/PPPwn/ports.txt ]; then
 		sudo iptables -t nat -I PREROUTING -p udp --dport ${prt/-/:} -j DNAT --to 192.168.2.2:${prt/:/-}
 	done
 else
-	sudo iptables -t nat -I PREROUTING -p tcp --dport 2121 -j DNAT --to 192.168.2.2:2121
-	sudo iptables -t nat -I PREROUTING -p tcp --dport 3232 -j DNAT --to 192.168.2.2:3232
-	sudo iptables -t nat -I PREROUTING -p tcp --dport 9090 -j DNAT --to 192.168.2.2:9090
-	sudo iptables -t nat -I PREROUTING -p tcp --dport 12800 -j DNAT --to 192.168.2.2:12800
-	sudo iptables -t nat -I PREROUTING -p tcp --dport 1337 -j DNAT --to 192.168.2.2:1337
+    sudo iptables -t nat -I PREROUTING -p tcp --dport 2121 -j DNAT --to 192.168.2.2:2121
+    sudo iptables -t nat -I PREROUTING -p tcp --dport 3232 -j DNAT --to 192.168.2.2:3232
+    sudo iptables -t nat -I PREROUTING -p tcp --dport 9090 -j DNAT --to 192.168.2.2:9090
+    sudo iptables -t nat -I PREROUTING -p tcp --dport 12800 -j DNAT --to 192.168.2.2:12800
+    sudo iptables -t nat -I PREROUTING -p tcp --dport 1337 -j DNAT --to 192.168.2.2:1337
+    sudo iptables -t nat -I PREROUTING -p tcp --dport 987 -j DNAT --to 192.168.2.2:987
+    sudo iptables -t nat -I PREROUTING -p tcp --dport 9295 -j DNAT --to 192.168.2.2:9295
+    sudo iptables -t nat -I PREROUTING -p tcp --dport 9296 -j DNAT --to 192.168.2.2:9296
+    sudo iptables -t nat -I PREROUTING -p tcp --dport 9297 -j DNAT --to 192.168.2.2:9297
+    sudo iptables -t nat -I PREROUTING -p tcp --dport 9303 -j DNAT --to 192.168.2.2:9303
+    sudo iptables -t nat -I PREROUTING -p tcp --dport 8572 -j DNAT --to 192.168.2.2:8572
 fi
 sudo iptables -t nat -A POSTROUTING -s 192.168.2.0/24 ! -d 192.168.2.0/24 -j MASQUERADE
 echo -e "\n\n\033[93m\nPPPoE Enabled \033[0m\n" | sudo tee /dev/tty1
